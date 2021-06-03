@@ -25,7 +25,7 @@ function fncGetProductList(currentPage) {
 
 <div style="width:98%; margin-left:10px;">
 
-<form name="detailForm" action="/listProduct.do?menu=${menu}" method="post">
+<form name="detailForm" action="/product/listProduct?menu=${menu}" method="post">
 
 <table width="100%" height="37" border="0" cellpadding="0"	cellspacing="0">
 	<tr>
@@ -114,29 +114,25 @@ function fncGetProductList(currentPage) {
 		<c:set var="i" value="${ i+1 }" />
 		
 			<tr class="ct_list_pop">
-		<td align="center">${ i }</td>
-		<td></td>
+				<td align="center">${ i }</td>
+				<td></td>
+						
+				<td align="left">
+				<a href="${menu == 'search' ? '/product/getProduct' : '/product/updateProduct'}?prodNo=${product.prodNo}&menu=${menu}">${product.prodName}</a></td>
 				
-		<td align="left">
-		<a href="${menu == 'search' ? '/product/getProduct' : '/product/updateProduct'}?prodNo=${product.prodNo}&menu=${menu}">${product.prodName}</a></td>
-		
-		<td></td>
-		<td align="left">${product.price}</td>
-		<td></td>
-		<td align="left">${product.regDate}</td>
-		<td></td>
-		<td align="left">
-		
-			구매완료
-		
-		</td>	
-	</tr>
+				<td></td>
+				<td align="left">${product.price}</td>
+				<td></td>
+				<td align="left">${product.regDate}</td>
+				<td></td>
+				<td align="left">구매완료</td>	
+			</tr>
 
-	<tr>
-		<td colspan="11" bgcolor="D6D7D6" height="1"></td>
-	</tr>	
-	
-	</c:forEach>
+			<tr>
+				<td colspan="11" bgcolor="D6D7D6" height="1"></td>
+			</tr>	
+			
+		</c:forEach>
 </table>
 
 <!-- PageNavigation Start... -->

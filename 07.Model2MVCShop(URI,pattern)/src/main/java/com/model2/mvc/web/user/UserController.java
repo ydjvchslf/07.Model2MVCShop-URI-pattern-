@@ -180,6 +180,7 @@ public class UserController {
 		model.addAttribute("list", map.get("list"));
 		model.addAttribute("resultPage", resultPage);
 		model.addAttribute("search", search);
+		model.addAttribute("VO", new String("User"));
 		
 		return "forward:/user/listUser.jsp";
 	}

@@ -94,6 +94,7 @@ public class ProductController {
 		}
 		
 		model.addAttribute("menu", request.getParameter("menu"));
+		model.addAttribute("VO", new String("Product"));
 		
 		return "forward:/product/listProduct.jsp";
 	}

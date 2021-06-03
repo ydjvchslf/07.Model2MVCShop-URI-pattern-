@@ -12,12 +12,12 @@
 </c:if>
 
 <c:forEach var="i"  begin="${resultPage.beginUnitPage}" end="${resultPage.endUnitPage}" step="1">
-	<a href="javascript:fncGetUserList('${ i }');">${ i }</a>
+	<a href="javascript:fncGet${VO }List('${ i }');">${ i }</a>
 </c:forEach>
 
 <c:if test="${ resultPage.endUnitPage >= resultPage.maxPage }">
 		이후 ▶
 </c:if>
 <c:if test="${ resultPage.endUnitPage < resultPage.maxPage }">
-		<a href="javascript:fncGetUserList('${resultPage.endUnitPage+1}')">이후 ▶</a>
+		<a href="javascript:fncGet${VO }List('${resultPage.endUnitPage+1}')">이후 ▶</a>
 </c:if>

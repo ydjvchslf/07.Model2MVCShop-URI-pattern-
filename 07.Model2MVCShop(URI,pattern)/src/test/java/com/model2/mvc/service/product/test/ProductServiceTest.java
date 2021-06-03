@@ -69,16 +69,16 @@ public class ProductServiceTest {
 		
 		Product product = new Product();
 		
-		product = productService.getProduct(10130);
+		product = productService.getProduct(10102);
 
 		//==> console 확인
 		System.out.println(product);
 		
-		Assert.assertEquals("aaa", product.getProdName());
-		Assert.assertEquals("bbb", product.getProdDetail());
-		//Assert.assertEquals("Manu", product.getManuDate());
-		Assert.assertEquals(8, product.getPrice());
-		//Assert.assertEquals("testProdFileName", product.getFileName());
+		Assert.assertEquals("testProdName", product.getProdName());
+		Assert.assertEquals("testProdDetail", product.getProdDetail());
+		Assert.assertEquals("Manu", product.getManuDate());
+		Assert.assertEquals(9999, product.getPrice());
+		Assert.assertEquals("testProdFileName", product.getFileName());
 		
 	}
 	
@@ -116,7 +116,7 @@ public class ProductServiceTest {
 	 
 	 	
 	 //==>  주석을 풀고 실행하면....
-	 @Test
+	 //@Test
 	 public void testGetProductListAll() throws Exception{
 		 
 	 	Search search = new Search();
@@ -153,9 +153,6 @@ public class ProductServiceTest {
 	 	System.out.println(totalCount);
 	 }
 	 
-	 //ByProdNo, ByProdName, ByPrice JUnit에서 오류... List 1개만 불러와야하는데, 3개를 불러오는 오류 (아직 해결X)
-	 
-	 
 	 //@Test
 	 public void testGetProductListByProdNo() throws Exception{
 		 
@@ -191,14 +188,14 @@ public class ProductServiceTest {
 	 	System.out.println(totalCount);
 	 }
 	 
-	 //@Test
+	 @Test
 	 public void testGetProductListByProdName() throws Exception{
 		 
 	 	Search search = new Search();
 	 	search.setCurrentPage(1);
 	 	search.setPageSize(3);
 	 	search.setSearchCondition("1");
-	 	search.setSearchKeyword("aa");
+	 	search.setSearchKeyword("a");
 	 	Map<String,Object> map = productService.getProductList(search);
 	 	
 	 	List<Object> list = (List<Object>)map.get("list");
@@ -234,7 +231,7 @@ public class ProductServiceTest {
 	 	search.setCurrentPage(1);
 	 	search.setPageSize(3);
 	 	search.setSearchCondition("2");
-	 	search.setSearchKeyword("999");
+	 	search.setSearchKeyword("10");
 	 	Map<String,Object> map = productService.getProductList(search);
 	 	
 	 	List<Object> list = (List<Object>)map.get("list");
